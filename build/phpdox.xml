@@ -3,6 +3,23 @@
   <project name="php" source="${basedir}/../src" workdir="${basedir}/api">
     <collector backend="parser" />
     <generator output="${basedir}/api">
+    	<enrich base="${basedir}/build">
+				<source type="build"/>
+				<source type="checkstyle">
+					<file name="${basedir}/logs/checkstyle.xml" /> 
+				</source>
+				<source type="pmd">
+					<file name="${basedir}/logs/pmd.xml" />
+				</source>
+				<source type="phploc">
+					<file name="${basedir}/logs/phploc.xml" />
+				</source>
+				<!--
+				<source type="phpunit">
+					<coverage path="${basedir}/coverage/xml" />
+				</source>
+				-->
+			</enrich>
       <build engine="html" output="html"/>
     </generator>
   </project>
