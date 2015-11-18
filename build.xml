@@ -22,7 +22,7 @@
          description="Performs a lint check and runs the tests (without generating code coverage reports)"/>
 
  <target name="static-analysis"
-         depends="lint,check-lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci"
+         depends="lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci"
          description="Performs static analysis" />
 
  <!-- Adjust the threadCount attribute's value to the number of CPUs -->
@@ -239,6 +239,7 @@
   <property name="phpdox.done" value="true"/>
  </target>
 
+<!--
  <target name="check-lint"
          depends="lint">
   <fail message="PHP Syntax error">
@@ -249,6 +250,7 @@
    </condition>
   </fail>
  </target>
+-->
 
  <target name="-check-failure">
   <fail message="PHPUnit did not finish successfully">
