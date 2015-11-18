@@ -10,11 +10,11 @@
  <property name="phpunit" value="phpunit"/>
 
  <target name="full-build"
-         depends="prepare,static-analysis,phpunit,phpdox,-check-lint,-check-failure"
+         depends="prepare,static-analysis,phpunit,phpdox,-check-failure"
          description="Performs static analysis, runs the tests, and generates project documentation"/>
 
  <target name="full-build-parallel"
-         depends="prepare,static-analysis-parallel,phpunit,phpdox,-check-lint,-check-failure"
+         depends="prepare,static-analysis-parallel,phpunit,phpdox,-check-failure"
          description="Performs static analysis (executing the tools in parallel), runs the tests, and generates project documentation"/>
 
  <target name="quick-build"
@@ -22,7 +22,7 @@
          description="Performs a lint check and runs the tests (without generating code coverage reports)"/>
 
  <target name="static-analysis"
-         depends="lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci"
+         depends="lint,check-lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci"
          description="Performs static analysis" />
 
  <!-- Adjust the threadCount attribute's value to the number of CPUs -->
@@ -239,7 +239,8 @@
   <property name="phpdox.done" value="true"/>
  </target>
 
- <target name="-check-lint">
+ <target name="check-lint"
+         depends="lint.done">
   <fail message="PHP Syntax error">
    <condition>
     <not>
