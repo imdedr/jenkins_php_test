@@ -240,7 +240,7 @@
  </target>
 
  <target name="check-lint"
-         depends="lint.done">
+         depends="lint">
   <fail message="PHP Syntax error">
    <condition>
     <not>
