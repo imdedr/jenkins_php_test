@@ -6,13 +6,13 @@
     	<enrich base="${basedir}/build">
 				<source type="build"/>
 				<source type="checkstyle">
-					<file name="${basedir}/logs/checkstyle.xml" /> 
+					<file name="${basedir}/../logs/checkstyle.xml" /> 
 				</source>
 				<source type="pmd">
-					<file name="${basedir}/logs/pmd.xml" />
+					<file name="${basedir}/../logs/pmd.xml" />
 				</source>
 				<source type="phploc">
-					<file name="${basedir}/logs/phploc.xml" />
+					<file name="${basedir}/../logs/phploc.xml" />
 				</source>
 				<!--
 				<source type="phpunit">
