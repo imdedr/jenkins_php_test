@@ -244,7 +244,7 @@
   <fail message="PHP Syntax error">
    <condition>
     <not>
-     <equals arg1="${result.lint}" arg2="0"/>
+     <equals arg1="${result.lint}" arg2="1"/>
     </not>
    </condition>
   </fail>
