@@ -15,6 +15,10 @@ function f2() {
 	echo 'something...'.'<br>';
 }
 
+function hi() {
+	return true;
+}
+
 f1();
 f2();
 echo 'something...'.'<br>';
