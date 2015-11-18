@@ -1,6 +1,6 @@
 <?php
 
-include "../src/a.php";
+include dirname( __FILE__ )."../src/a.php";
 
 class DemoTest extends PHPUnit_Framework_TestCase {
   public function testPass() {
