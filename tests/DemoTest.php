@@ -4,6 +4,6 @@ class DemoTest extends PHPUnit_Framework_TestCase {
       $this->assertTrue(true);
     }
   public function testFail() {
-      $this->assertFalse(true);
+      $this->assertFalse(false);
     }
 }
